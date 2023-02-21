@@ -1,15 +1,15 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "4",
-    "jobId" : "jobs/TestJob",
-    "name" : "TestJob",
+    "fabricId" : "7",
+    "jobId" : "jobs/TestJob2",
+    "name" : "TestJob2",
     "schedule" : "0 0 0 1/1 * ? *",
     "jobClusterMode" : {
       "clusterMode" : "Single"
     },
     "enabled" : true,
-    "defaultClusterSize" : "small",
+    "defaultClusterSize" : "Small",
     "alerting" : {
       "emails" : "",
       "onStart" : false,
@@ -56,21 +56,21 @@
     } ]
   },
   "processes" : {
-    "tg3ri4OGYgALvtVVGAYnm$$AZGEhqmWvUN4yrkQtNfCc" : {
-      "id" : "tg3ri4OGYgALvtVVGAYnm$$AZGEhqmWvUN4yrkQtNfCc",
+    "yxrXdS9J-zOme8_Sw9wqx$$XWs4d84BBskCGYCYtEr6_" : {
+      "id" : "yxrXdS9J-zOme8_Sw9wqx$$XWs4d84BBskCGYCYtEr6_",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "Pipeline_0",
         "slug" : "Pipeline_0",
-        "x" : 460,
-        "y" : 340
+        "x" : 480,
+        "y" : 360
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "iq5ubF9H7Xvb2uAf-UtfL$$O59VnxZdOFonV43s8qVcf"
+          "id" : "Mpw8pK4NqAi0Yl3ccOD6d$$P1wkPeGBuw9vJH_lb5nPj"
         } ],
         "outputs" : [ {
-          "id" : "FxcemcPYRa-T9bP7cwUya$$LC98DUe7nPkYLwo1WEAiH"
+          "id" : "rVz7t-Mtjen-NxttiPiog$$fH0xFmaDsJ9XhyMFnojPN"
         } ]
       },
       "settings" : {
@@ -83,7 +83,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "pipelines/customers_orders",
+        "pipelineId" : "pipelines/farmers-markets-irs",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
@@ -94,59 +94,21 @@
         }
       }
     },
-    "stMpK2PPcK7HzWbsEdIwO$$cgXYwEx_1wuAI7kXckOmq" : {
-      "id" : "stMpK2PPcK7HzWbsEdIwO$$cgXYwEx_1wuAI7kXckOmq",
+    "IHK_WMj8c1ZBDm0Jxy141$$0SpNhuCnNdmEoLWGqGa3L" : {
+      "id" : "IHK_WMj8c1ZBDm0Jxy141$$0SpNhuCnNdmEoLWGqGa3L",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "Pipeline_1",
         "slug" : "Pipeline_1",
-        "x" : 1000,
-        "y" : 500
+        "x" : 820,
+        "y" : 320
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "fOddRCvmdcX1fGiXjIZuV$$4_5jYNOZfEKCxSELNo_PU"
+          "id" : "y65n4si3ZznqLHjVcSy1_$$DPC_WOQluzJ8fHDNBBZtw"
         } ],
         "outputs" : [ {
-          "id" : "cjLDyAVqd6_wvEmkA6JGc$$ND1HxXHQo_sx5SI9yz0sK"
-        } ]
-      },
-      "settings" : {
-        "type" : "Inherited",
-        "alerting" : {
-          "emails" : "",
-          "onStart" : false,
-          "onSuccess" : false,
-          "onFailure" : false
-        }
-      },
-      "properties" : {
-        "pipelineId" : "pipelines/join_agg_sort",
-        "configurations" : {
-          "schema" : [ ],
-          "instances" : {
-            "ProphecyPython" : [ "default" ]
-          },
-          "overrides" : { },
-          "selectedInstance" : "default"
-        }
-      }
-    },
-    "c1quDfRATtFmG2C_LBtaE$$yHtqyCo_Eix5WQwi3Mo5l" : {
-      "id" : "c1quDfRATtFmG2C_LBtaE$$yHtqyCo_Eix5WQwi3Mo5l",
-      "component" : "Pipeline",
-      "metadata" : {
-        "label" : "Pipeline_2",
-        "slug" : "Pipeline_2",
-        "x" : 980,
-        "y" : 240
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "i72mSRXT2ypuNLixqfoPu$$l0Wr0o_3fNBsqksMmz5TH"
-        } ],
-        "outputs" : [ {
-          "id" : "vHcskKirjkW9z-VDUUviq$$rtbwSd_R-Osm6DmFcbXvH"
+          "id" : "Zm2rebSns_b3jJnPf__-6$$6i8PpPG3O5UjORsReTqqX"
         } ]
       },
       "settings" : {
@@ -172,16 +134,10 @@
     }
   },
   "connections" : [ {
-    "id" : "iG_8ysOrcNGEOD_AFjzvA",
-    "source" : "tg3ri4OGYgALvtVVGAYnm$$AZGEhqmWvUN4yrkQtNfCc",
-    "target" : "stMpK2PPcK7HzWbsEdIwO$$cgXYwEx_1wuAI7kXckOmq",
-    "sourcePort" : "FxcemcPYRa-T9bP7cwUya$$LC98DUe7nPkYLwo1WEAiH",
-    "targetPort" : "fOddRCvmdcX1fGiXjIZuV$$4_5jYNOZfEKCxSELNo_PU"
-  }, {
-    "id" : "ibe1aqQZ7UL1IMWXFWRgS",
-    "source" : "tg3ri4OGYgALvtVVGAYnm$$AZGEhqmWvUN4yrkQtNfCc",
-    "target" : "c1quDfRATtFmG2C_LBtaE$$yHtqyCo_Eix5WQwi3Mo5l",
-    "sourcePort" : "FxcemcPYRa-T9bP7cwUya$$LC98DUe7nPkYLwo1WEAiH",
-    "targetPort" : "i72mSRXT2ypuNLixqfoPu$$l0Wr0o_3fNBsqksMmz5TH"
+    "id" : "fXAwoWC21i6wTXK1H1fNs",
+    "source" : "yxrXdS9J-zOme8_Sw9wqx$$XWs4d84BBskCGYCYtEr6_",
+    "target" : "IHK_WMj8c1ZBDm0Jxy141$$0SpNhuCnNdmEoLWGqGa3L",
+    "sourcePort" : "rVz7t-Mtjen-NxttiPiog$$fH0xFmaDsJ9XhyMFnojPN",
+    "targetPort" : "y65n4si3ZznqLHjVcSy1_$$DPC_WOQluzJ8fHDNBBZtw"
   } ]
 }
