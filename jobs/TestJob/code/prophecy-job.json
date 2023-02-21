@@ -44,8 +44,8 @@
       "id" : "7",
       "name" : "dev2-ashish",
       "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small" ]
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
