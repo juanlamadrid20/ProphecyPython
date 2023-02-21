@@ -14,8 +14,8 @@ pipelines:
     createdAt: '2023-02-20 13:04:25'
     datasets:
       inputs:
-      - datasets/orders
       - datasets/customers
+      - datasets/orders
       outputs:
       - datasets/customers_orders
     dependencies: {}
@@ -42,8 +42,8 @@ pipelines:
     createdAt: '2023-02-20 13:04:26'
     datasets:
       inputs:
-      - datasets/orders
       - datasets/customers
+      - datasets/orders
       outputs:
       - datasets/customer_totals
     dependencies: {}
@@ -56,8 +56,8 @@ pipelines:
     createdAt: '2023-02-20 13:04:26'
     datasets:
       inputs:
-      - datasets/irs-zipcode-data
       - datasets/farmers-markets
+      - datasets/irs-zipcode-data
       outputs:
       - datasets/farmers_market_tax_report
     dependencies: {}
@@ -193,7 +193,33 @@ datasets:
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:25'
 templates: {}
-jobs: {}
+jobs:
+  jobs/TestJob:
+    name: TestJob
+    description: Testing job from PBT
+    fabricUID: 4
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1/1 * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/customers_orders
+    - pipelines/join_agg_sort
+    - pipelines/report_top_customers
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2023-02-21 13:58:37'
+    author: ashish@prophecy.io
 libraries: []
 subgraphs: {}
 sqlModels: {}

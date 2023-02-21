@@ -1,11 +1,14 @@
 from prophecy.config import ConfigBase
+prophecy_spark_context = None
 
 
 class Config(ConfigBase):
 
-    def __init__(self, fabricName: str=None):
+    def __init__(self, ):
         self.spark = None
-        self.update(fabricName)
+        self.update()
 
-    def update(self, fabricName: str):
-        self.fabricName = fabricName
+    def update(self, ):
+        global prophecy_spark_context
+        prophecy_spark_context = self.spark
+        pass

@@ -1,0 +1,174 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "4",
+    "jobId" : "jobs/TestJob",
+    "name" : "TestJob",
+    "schedule" : "0 0 0 1/1 * ? *",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : true,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "4",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    } ]
+  },
+  "processes" : {
+    "tg3ri4OGYgALvtVVGAYnm$$AZGEhqmWvUN4yrkQtNfCc" : {
+      "id" : "tg3ri4OGYgALvtVVGAYnm$$AZGEhqmWvUN4yrkQtNfCc",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_0",
+        "slug" : "Pipeline_0",
+        "x" : 460,
+        "y" : 340
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iq5ubF9H7Xvb2uAf-UtfL$$O59VnxZdOFonV43s8qVcf"
+        } ],
+        "outputs" : [ {
+          "id" : "FxcemcPYRa-T9bP7cwUya$$LC98DUe7nPkYLwo1WEAiH"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/customers_orders",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "ProphecyPython" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "stMpK2PPcK7HzWbsEdIwO$$cgXYwEx_1wuAI7kXckOmq" : {
+      "id" : "stMpK2PPcK7HzWbsEdIwO$$cgXYwEx_1wuAI7kXckOmq",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_1",
+        "slug" : "Pipeline_1",
+        "x" : 1000,
+        "y" : 500
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "fOddRCvmdcX1fGiXjIZuV$$4_5jYNOZfEKCxSELNo_PU"
+        } ],
+        "outputs" : [ {
+          "id" : "cjLDyAVqd6_wvEmkA6JGc$$ND1HxXHQo_sx5SI9yz0sK"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/join_agg_sort",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "ProphecyPython" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "c1quDfRATtFmG2C_LBtaE$$yHtqyCo_Eix5WQwi3Mo5l" : {
+      "id" : "c1quDfRATtFmG2C_LBtaE$$yHtqyCo_Eix5WQwi3Mo5l",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_2",
+        "slug" : "Pipeline_2",
+        "x" : 980,
+        "y" : 240
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "i72mSRXT2ypuNLixqfoPu$$l0Wr0o_3fNBsqksMmz5TH"
+        } ],
+        "outputs" : [ {
+          "id" : "vHcskKirjkW9z-VDUUviq$$rtbwSd_R-Osm6DmFcbXvH"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/report_top_customers",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "ProphecyPython" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "iG_8ysOrcNGEOD_AFjzvA",
+    "source" : "tg3ri4OGYgALvtVVGAYnm$$AZGEhqmWvUN4yrkQtNfCc",
+    "target" : "stMpK2PPcK7HzWbsEdIwO$$cgXYwEx_1wuAI7kXckOmq",
+    "sourcePort" : "FxcemcPYRa-T9bP7cwUya$$LC98DUe7nPkYLwo1WEAiH",
+    "targetPort" : "fOddRCvmdcX1fGiXjIZuV$$4_5jYNOZfEKCxSELNo_PU"
+  }, {
+    "id" : "ibe1aqQZ7UL1IMWXFWRgS",
+    "source" : "tg3ri4OGYgALvtVVGAYnm$$AZGEhqmWvUN4yrkQtNfCc",
+    "target" : "c1quDfRATtFmG2C_LBtaE$$yHtqyCo_Eix5WQwi3Mo5l",
+    "sourcePort" : "FxcemcPYRa-T9bP7cwUya$$LC98DUe7nPkYLwo1WEAiH",
+    "targetPort" : "i72mSRXT2ypuNLixqfoPu$$l0Wr0o_3fNBsqksMmz5TH"
+  } ]
+}
