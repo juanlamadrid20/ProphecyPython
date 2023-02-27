@@ -38,7 +38,7 @@
     "interimModeEnabled" : true,
     "visualCodeInterimMode" : "Disabled",
     "recordsLimit" : {
-      "enabled" : false,
+      "enabled" : true,
       "value" : 1000
     }
   },
@@ -237,7 +237,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "94427##amount", "94427##account_open_date", "94427##order_id", "94427##customer_id" ],
+        "importLanguage" : "python",
         "expressions" : [ {
           "target" : "account_length_days",
           "expression" : {
@@ -266,7 +266,17 @@
             "expression" : "amount"
           },
           "description" : ""
-        } ]
+        }, {
+          "target" : "full_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat(first_name, last_name)"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "94427##order_id", "94427##last_name", "94427##amount", "94427##account_open_date", "94427##first_name", "94427##customer_id" ]
       }
     },
     "Source_51275" : {

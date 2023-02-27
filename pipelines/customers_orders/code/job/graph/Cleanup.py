@@ -10,5 +10,6 @@ def Cleanup(spark: SparkSession, in0: DataFrame) -> DataFrame:
         datediff(current_date(), col("account_open_date")).alias("account_length_days"), 
         col("order_id"), 
         col("customer_id"), 
-        col("amount")
+        col("amount"), 
+        concat(col("first_name"), col("last_name")).alias("full_name")
     )
