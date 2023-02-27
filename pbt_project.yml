@@ -1,6 +1,6 @@
 name: HelloWorld
 description: ''
-version: 0.0.1-SNAPSHOT
+version: v1.0
 author: ''
 language: python
 buildSystem: wheel
