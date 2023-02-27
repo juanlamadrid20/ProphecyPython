@@ -5,7 +5,7 @@ from prophecy.libs import typed_lit
 from job.config.ConfigStore import *
 from job.udfs.UDFs import *
 
-def Cleanup(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def Cleanup_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         datediff(current_date(), col("account_open_date")).alias("account_length_days"), 
         col("order_id"), 

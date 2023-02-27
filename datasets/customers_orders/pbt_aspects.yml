@@ -5,16 +5,28 @@ schema:
   - name: customer_id
     type: integer
     nullable: true
-    metadata: {}
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
   - name: orders
     type: long
     nullable: false
-    metadata: {}
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
   - name: amounts
     type: double
     nullable: true
-    metadata: {}
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
   - name: account_length_days
     type: integer
     nullable: true
-    metadata: {}
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

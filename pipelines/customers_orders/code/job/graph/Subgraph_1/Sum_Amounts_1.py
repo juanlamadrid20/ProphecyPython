@@ -5,7 +5,7 @@ from prophecy.libs import typed_lit
 from job.config.ConfigStore import *
 from job.udfs.UDFs import *
 
-def Sum_Amounts(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def Sum_Amounts_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
     df1 = in0.groupBy(col("customer_id"))
 
     return df1.agg(

@@ -10,9 +10,8 @@ def pipeline(spark: SparkSession) -> None:
     df_Orders = Orders(spark)
     df_Customers = Customers(spark)
     df_By_CustomerId = By_CustomerId(spark, df_Orders, df_Customers)
-    df_Cleanup = Cleanup(spark, df_By_CustomerId)
-    df_Sum_Amounts = Sum_Amounts(spark, df_Cleanup)
-    Customer_Orders(spark, df_Sum_Amounts)
+    df_Subgraph_1 = Subgraph_1(spark, df_By_CustomerId)
+    Customer_Orders(spark, df_Subgraph_1)
 
 def main():
     spark = SparkSession.builder\

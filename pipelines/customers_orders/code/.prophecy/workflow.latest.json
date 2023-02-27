@@ -55,21 +55,15 @@
     "target" : "Join_98619",
     "targetPort" : "2322"
   }, {
-    "id" : "829",
+    "id" : "I0j9bn8s7zHGiwn_ps2OT",
     "source" : "Join_98619",
     "sourcePort" : "31576",
-    "target" : "Reformat_5054",
-    "targetPort" : "94427"
+    "target" : "7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw",
+    "targetPort" : "CnG23TX--OzPZrOwBx51o$$wGkc9Ba8kmoCEdNmpEbIS"
   }, {
-    "id" : "386",
-    "source" : "Reformat_5054",
-    "sourcePort" : "16363",
-    "target" : "Aggregate_74495",
-    "targetPort" : "42999"
-  }, {
-    "id" : "884",
-    "source" : "Aggregate_74495",
-    "sourcePort" : "96556",
+    "id" : "joeFvL1ZbbF0T9YVCoD1x",
+    "source" : "7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw",
+    "sourcePort" : "rpcP1Fnslg6iCcgYS17gC$$YBBJxyMCZnzn2ADxj5JPl",
     "target" : "Target_63106",
     "targetPort" : "17728"
   } ],
@@ -182,13 +176,204 @@
         "headAlias" : "in0"
       }
     },
+    "7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw" : {
+      "id" : "7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "Subgraph_1",
+        "slug" : "Subgraph_1",
+        "x" : 540,
+        "y" : 140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "CnG23TX--OzPZrOwBx51o$$wGkc9Ba8kmoCEdNmpEbIS",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "rpcP1Fnslg6iCcgYS17gC$$YBBJxyMCZnzn2ADxj5JPl",
+          "slug" : "out0",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "Lt2S5p-6ZZrr6eFnaxY1l",
+        "source" : "abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB",
+        "sourcePort" : "01YWvyQ4zPFs0JuFaOOtG$$BT76ByBjlRwm35Ra4zBfN",
+        "target" : "7s5PTtOZnos6t8yJ-pJJ1$$5ACYKTWs-q4T8NqaAzlJz",
+        "targetPort" : "42wYeLpqAdLF0wB8ZLB0q$$j48V_eR1a5yE870QPZL1W"
+      }, {
+        "id" : "CDwoR53bEiPhQtqN8eRRE",
+        "source" : "7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw",
+        "sourcePort" : "CnG23TX--OzPZrOwBx51o$$wGkc9Ba8kmoCEdNmpEbIS",
+        "target" : "abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB",
+        "targetPort" : "Q1l1rMVhb_KCoTWaPFkQW$$PyL9j7ra4leoBbni19zn0"
+      }, {
+        "id" : "Ba4A6hL3qDIaY5-OeK-bi",
+        "source" : "7s5PTtOZnos6t8yJ-pJJ1$$5ACYKTWs-q4T8NqaAzlJz",
+        "sourcePort" : "pb1t-GLPhOorHC7nozjMW$$cNAVBr17UQ6JtKy9prp40",
+        "target" : "7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw",
+        "targetPort" : "rpcP1Fnslg6iCcgYS17gC$$YBBJxyMCZnzn2ADxj5JPl"
+      } ],
+      "processes" : {
+        "abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB" : {
+          "id" : "abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Cleanup_1",
+            "slug" : "Cleanup_1",
+            "x" : 540,
+            "y" : 280,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "Q1l1rMVhb_KCoTWaPFkQW$$PyL9j7ra4leoBbni19zn0",
+              "slug" : "in0",
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "01YWvyQ4zPFs0JuFaOOtG$$BT76ByBjlRwm35Ra4zBfN",
+              "slug" : "out",
+              "isStreaming" : false
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "importLanguage" : "python",
+            "expressions" : [ {
+              "target" : "account_length_days",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "datediff(current_date(), account_open_date)"
+              },
+              "description" : ""
+            }, {
+              "target" : "order_id",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "order_id"
+              },
+              "description" : ""
+            }, {
+              "target" : "customer_id",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "customer_id"
+              },
+              "description" : ""
+            }, {
+              "target" : "amount",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "amount"
+              },
+              "description" : ""
+            }, {
+              "target" : "full_name",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "concat(first_name, last_name)"
+              },
+              "description" : ""
+            } ],
+            "importString" : "",
+            "activeTab" : "expressions",
+            "columnsSelector" : [ "94427##order_id", "94427##last_name", "94427##amount", "94427##account_open_date", "94427##first_name", "94427##customer_id" ]
+          }
+        },
+        "7s5PTtOZnos6t8yJ-pJJ1$$5ACYKTWs-q4T8NqaAzlJz" : {
+          "id" : "7s5PTtOZnos6t8yJ-pJJ1$$5ACYKTWs-q4T8NqaAzlJz",
+          "component" : "Aggregate",
+          "metadata" : {
+            "label" : "Sum Amounts_1",
+            "slug" : "Sum_Amounts_1",
+            "x" : 720,
+            "y" : 280,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "42wYeLpqAdLF0wB8ZLB0q$$j48V_eR1a5yE870QPZL1W",
+              "slug" : "in0",
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "pb1t-GLPhOorHC7nozjMW$$cNAVBr17UQ6JtKy9prp40",
+              "slug" : "out",
+              "isStreaming" : false
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
+          },
+          "properties" : {
+            "allIns" : false,
+            "doPivot" : false,
+            "aggregate" : [ {
+              "target" : "orders",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "count(order_id)"
+              },
+              "description" : "",
+              "_row_id" : null
+            }, {
+              "target" : "amounts",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "sum(amount)"
+              },
+              "description" : "",
+              "_row_id" : null
+            }, {
+              "target" : "account_length_days",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "first(account_length_days)"
+              },
+              "description" : "",
+              "_row_id" : null
+            } ],
+            "allowSelection" : true,
+            "pivotColumn" : null,
+            "pivotValues" : [ ],
+            "activeTab" : "aggregate",
+            "columnsSelector" : [ "42999##order_id", "42999##customer_id", "42999##amount", "42999##account_length_days" ],
+            "groupBy" : [ {
+              "target" : "customer_id",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "customer_id"
+              },
+              "description" : "",
+              "_row_id" : null
+            } ]
+          }
+        }
+      }
+    },
     "Target_63106" : {
       "id" : "Target_63106",
       "component" : "Target",
       "metadata" : {
         "label" : "Customer Orders",
         "slug" : "Customer_Orders",
-        "x" : 860,
+        "x" : 840,
         "y" : 220,
         "phase" : 0,
         "cache" : false,
@@ -207,76 +392,6 @@
       },
       "properties" : {
         "datasetId" : "datasets/customers_orders"
-      }
-    },
-    "Reformat_5054" : {
-      "id" : "Reformat_5054",
-      "component" : "Reformat",
-      "metadata" : {
-        "label" : "Cleanup",
-        "slug" : "Cleanup",
-        "x" : 500,
-        "y" : 220,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "94427",
-          "slug" : "in0",
-          "isStreaming" : false
-        } ],
-        "outputs" : [ {
-          "id" : "16363",
-          "slug" : "out",
-          "isStreaming" : false
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "importLanguage" : "python",
-        "expressions" : [ {
-          "target" : "account_length_days",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "datediff(current_date(), account_open_date)"
-          },
-          "description" : ""
-        }, {
-          "target" : "order_id",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "order_id"
-          },
-          "description" : ""
-        }, {
-          "target" : "customer_id",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "customer_id"
-          },
-          "description" : ""
-        }, {
-          "target" : "amount",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "amount"
-          },
-          "description" : ""
-        }, {
-          "target" : "full_name",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "concat(first_name, last_name)"
-          },
-          "description" : ""
-        } ],
-        "importString" : "",
-        "activeTab" : "expressions",
-        "columnsSelector" : [ "94427##order_id", "94427##last_name", "94427##amount", "94427##account_open_date", "94427##first_name", "94427##customer_id" ]
       }
     },
     "Source_51275" : {
@@ -331,77 +446,6 @@
       },
       "properties" : {
         "datasetId" : "datasets/orders"
-      }
-    },
-    "Aggregate_74495" : {
-      "id" : "Aggregate_74495",
-      "component" : "Aggregate",
-      "metadata" : {
-        "label" : "Sum Amounts",
-        "slug" : "Sum_Amounts",
-        "x" : 680,
-        "y" : 220,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "42999",
-          "slug" : "in0",
-          "isStreaming" : false
-        } ],
-        "outputs" : [ {
-          "id" : "96556",
-          "slug" : "out",
-          "isStreaming" : false
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "allIns" : false,
-        "doPivot" : false,
-        "aggregate" : [ {
-          "target" : "orders",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "count(order_id)"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "amounts",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "sum(amount)"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "account_length_days",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "first(account_length_days)"
-          },
-          "description" : "",
-          "_row_id" : null
-        } ],
-        "allowSelection" : true,
-        "pivotColumn" : null,
-        "pivotValues" : [ ],
-        "activeTab" : "aggregate",
-        "columnsSelector" : [ "42999##order_id", "42999##customer_id", "42999##amount", "42999##account_length_days" ],
-        "groupBy" : [ {
-          "target" : "customer_id",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "customer_id"
-          },
-          "description" : "",
-          "_row_id" : null
-        } ]
       }
     }
   },
