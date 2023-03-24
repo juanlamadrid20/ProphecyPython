@@ -1,17 +1,14 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
-from job.config.ConfigStore import *
-from job.udfs.UDFs import *
+from streaming_emp.config.ConfigStore import *
+from streaming_emp.udfs.UDFs import *
 from prophecy.utils import *
-from job.graph import *
+from streaming_emp.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_Orders = Orders(spark)
-    df_Customers = Customers(spark)
-    df_By_CustomerId = By_CustomerId(spark, df_Orders, df_Customers)
-    df_Subgraph_1 = Subgraph_1(spark, Config.Subgraph_1, df_By_CustomerId)
-    Customer_Orders(spark, df_Subgraph_1)
+    df_emp_adls = emp_adls(spark)
+    emp_adls_prophecy(spark, df_emp_adls)
 
 def main():
     spark = SparkSession.builder\
@@ -22,10 +19,13 @@ def main():
                 .getOrCreate()\
                 .newSession()
     Utils.initializeFromArgs(spark, parse_args())
-    spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/customers_orders")
+    spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/streaming_emp")
     
-    MetricsCollector.start(spark = spark, pipelineId = "pipelines/customers_orders")
+    MetricsCollector.start(spark = spark, pipelineId = "pipelines/streaming_emp")
     pipeline(spark)
+    
+    spark.streams.resetTerminated()
+    spark.streams.awaitAnyTermination()
     MetricsCollector.end(spark)
 
 if __name__ == "__main__":

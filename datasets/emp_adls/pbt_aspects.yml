@@ -17,7 +17,7 @@ schema:
       mappings: []
       tags: []
   - name: employer_id
-    type: integer
+    type: string
     nullable: true
     metadata:
       description: ''
@@ -31,14 +31,14 @@ schema:
       mappings: []
       tags: []
   - name: weight_lb
-    type: integer
+    type: string
     nullable: true
     metadata:
       description: ''
       mappings: []
       tags: []
   - name: height_in
-    type: integer
+    type: string
     nullable: true
     metadata:
       description: ''
@@ -67,20 +67,6 @@ schema:
       tags: []
   - name: state
     type: string
-    nullable: true
-    metadata:
-      description: ''
-      mappings: []
-      tags: []
-  - name: source_file
-    type: string
-    nullable: true
-    metadata:
-      description: ''
-      mappings: []
-      tags: []
-  - name: processing_time
-    type: timestamp
     nullable: true
     metadata:
       description: ''

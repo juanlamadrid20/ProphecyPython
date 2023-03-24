@@ -2,12 +2,14 @@
   "metainfo" : {
     "id" : "1",
     "language" : "python",
-    "fabricId" : "1527",
+    "fabricId" : "1729",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
-      "udfs" : [ ]
+      "udfs" : [ ],
+      "functionPackageName" : "juan.lamadriddatabricks.com_team.helloworld.functions",
+      "sharedFunctionPackageNames" : [ ]
     },
     "udafs" : {
       "language" : "python",
@@ -16,7 +18,15 @@
     "configuration" : {
       "common" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "Subgraph_1",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true
+        } ]
       },
       "oldCommon" : {
         "type" : "record",
@@ -33,6 +43,7 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -40,7 +51,8 @@
     "recordsLimit" : {
       "enabled" : true,
       "value" : 1000
-    }
+    },
+    "configurationVersion" : "v1"
   },
   "connections" : [ {
     "id" : "425",
@@ -85,16 +97,203 @@
         "inputs" : [ {
           "id" : "47810",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "fname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "employer_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ssn",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight_lb",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "height_in",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "righty",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "hire_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_file",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "processing_time",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         }, {
           "id" : "2322",
           "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "31576",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -192,13 +391,11 @@
       "ports" : {
         "inputs" : [ {
           "id" : "CnG23TX--OzPZrOwBx51o$$wGkc9Ba8kmoCEdNmpEbIS",
-          "slug" : "in0",
-          "isStreaming" : false
+          "slug" : "in0"
         } ],
         "outputs" : [ {
           "id" : "rpcP1Fnslg6iCcgYS17gC$$YBBJxyMCZnzn2ADxj5JPl",
-          "slug" : "out0",
-          "isStreaming" : false
+          "slug" : "out0"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -240,13 +437,11 @@
           "ports" : {
             "inputs" : [ {
               "id" : "Q1l1rMVhb_KCoTWaPFkQW$$PyL9j7ra4leoBbni19zn0",
-              "slug" : "in0",
-              "isStreaming" : false
+              "slug" : "in0"
             } ],
             "outputs" : [ {
               "id" : "01YWvyQ4zPFs0JuFaOOtG$$BT76ByBjlRwm35Ra4zBfN",
-              "slug" : "out",
-              "isStreaming" : false
+              "slug" : "out"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -310,13 +505,11 @@
           "ports" : {
             "inputs" : [ {
               "id" : "42wYeLpqAdLF0wB8ZLB0q$$j48V_eR1a5yE870QPZL1W",
-              "slug" : "in0",
-              "isStreaming" : false
+              "slug" : "in0"
             } ],
             "outputs" : [ {
               "id" : "pb1t-GLPhOorHC7nozjMW$$cNAVBr17UQ6JtKy9prp40",
-              "slug" : "out",
-              "isStreaming" : false
+              "slug" : "out"
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -383,8 +576,7 @@
       "ports" : {
         "inputs" : [ {
           "id" : "17728",
-          "slug" : "in0",
-          "isStreaming" : false
+          "slug" : "in0"
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
@@ -411,8 +603,7 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "83296",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -438,8 +629,7 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "65082",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -454,5 +644,230 @@
     "outputs" : [ ],
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false
-  }
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.Join_98619.properties.conditions[0].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in0.customer_id [Conditions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.expressions[1].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in0.order_id [Expressions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.expressions[2].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in0.customer_id [Expressions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.expressions[3].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in0.amount [Expressions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Gems inside subgraph are broken",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw.processes.abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw.processes.abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB.properties.expressions[0].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column account_open_date",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw.processes.abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB.properties.expressions[1].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column order_id",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw.processes.abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB.properties.expressions[2].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column customer_id",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw.processes.abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB.properties.expressions[3].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column amount",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw.processes.abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB.properties.expressions[4].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column first_name",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw.processes.abibDjUHDcUiJ0T07DCOT$$A6eKDi8wGbPsRtCseTVMB.properties.expressions[4].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column last_name",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.7miDlR19Ef1SyWxfXF5Zl$$16dr5Llh0bXMPUH5MXyhw.processes.7s5PTtOZnos6t8yJ-pJJ1$$5ACYKTWs-q4T8NqaAzlJz",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Target_63106",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
 }

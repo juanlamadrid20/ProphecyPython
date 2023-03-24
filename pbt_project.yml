@@ -3,34 +3,47 @@ description: ''
 version: v1.0
 author: ''
 language: python
-buildSystem: wheel
+buildSystem: ''
+buildSystemDetails:
+  artefactID: helloworld
+  parentArtefactID: juan.lamadriddatabricks.com_team
+  buildSystem: wheel
+  author: null
+  createdAt: '2023-03-24 14:22:26'
+  modifiedAt: '2023-03-24 14:22:26'
 pipelines:
   pipelines/customers_orders:
     name: customers_orders
     description: Aggregates total spending's for each customer
     author: ashish@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
     createdAt: '2023-02-20 13:04:25'
+    modifiedAt: '2023-03-24 14:29:04'
     datasets:
       inputs:
       - datasets/customers
       - datasets/orders
       outputs:
       - datasets/customers_orders
+    subgraphs: []
     dependencies: {}
   pipelines/report_top_customers:
     name: report_top_customers
     description: Prepare a report based on customers' spending
     author: ashish@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
     createdAt: '2023-02-20 13:04:26'
+    modifiedAt: '2023-02-20 13:04:26'
     datasets:
       inputs:
       - datasets/customers_orders
       outputs:
       - datasets/report
+    subgraphs: []
     dependencies: {}
   pipelines/join_agg_sort:
     name: join_agg_sort
@@ -38,28 +51,50 @@ pipelines:
       (sales by customer), sorting (by totals)
     author: ashish@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
     createdAt: '2023-02-20 13:04:26'
+    modifiedAt: '2023-02-20 13:04:26'
     datasets:
       inputs:
       - datasets/customers
       - datasets/orders
       outputs:
       - datasets/customer_totals
+    subgraphs: []
     dependencies: {}
   pipelines/farmers-markets-irs:
     name: farmers-markets-irs
     description: Exploration of Farmer's Market Locations By US Zip Code
     author: ashish@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
     createdAt: '2023-02-20 13:04:26'
+    modifiedAt: '2023-02-20 13:04:26'
     datasets:
       inputs:
       - datasets/farmers-markets
       - datasets/irs-zipcode-data
       outputs:
       - datasets/farmers_market_tax_report
+    subgraphs: []
+    dependencies: {}
+  pipelines/streaming_emp:
+    name: streaming_emp
+    description: ''
+    author: juan.lamadrid@databricks.com
+    mode: stream
+    artefactID: ''
+    language: python
+    createdAt: '2023-03-24 14:30:19'
+    modifiedAt: '2023-03-24 14:51:37'
+    datasets:
+      inputs:
+      - datasets/emp_adls
+      outputs:
+      - datasets/emp_adls_prophecy
+    subgraphs: []
     dependencies: {}
 datasets:
   datasets/report:
@@ -67,6 +102,7 @@ datasets:
     description: Final report for the bank
     author: ashish@prophecy.io
     createdAt: '2023-02-20 13:04:21'
+    modifiedAt: '2023-02-20 13:04:21'
     mode: batch
     physicalDatasets:
       ashish_dev:
@@ -75,11 +111,13 @@ datasets:
         description: ''
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:22'
+        modifiedAt: '2023-02-20 13:04:22'
   datasets/customer_totals:
     name: customer_totals
     description: Customers by total of their purchases
     author: ashish@prophecy.io
     createdAt: '2023-02-20 13:04:22'
+    modifiedAt: '2023-02-20 13:04:22'
     mode: batch
     physicalDatasets:
       ashish_dev:
@@ -88,11 +126,13 @@ datasets:
         description: ''
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:22'
+        modifiedAt: '2023-02-20 13:04:22'
   datasets/orders:
     name: orders
     description: All the orders placed by the customers
     author: ashish@prophecy.io
     createdAt: '2023-02-20 13:04:23'
+    modifiedAt: '2023-03-24 14:29:04'
     mode: batch
     physicalDatasets:
       ashish_dev:
@@ -101,11 +141,13 @@ datasets:
         description: ''
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:23'
+        modifiedAt: '2023-02-20 13:04:23'
   datasets/customers:
     name: customers
     description: All the customers
     author: ashish@prophecy.io
     createdAt: '2023-02-20 13:04:23'
+    modifiedAt: '2023-02-20 13:04:23'
     mode: batch
     physicalDatasets:
       ashish_dev:
@@ -114,11 +156,13 @@ datasets:
         description: ''
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:23'
+        modifiedAt: '2023-02-20 13:04:23'
   datasets/customers_orders:
     name: customers_orders
     description: Customers by total of their purchases
     author: ashish@prophecy.io
     createdAt: '2023-02-20 13:04:23'
+    modifiedAt: '2023-02-20 13:04:23'
     mode: batch
     physicalDatasets:
       ashish_dev:
@@ -127,11 +171,13 @@ datasets:
         description: ''
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:23'
+        modifiedAt: '2023-02-20 13:04:23'
   datasets/old_events:
     name: old_events
     description: Old events data
     author: ashish@prophecy.io
     createdAt: '2023-02-20 13:04:24'
+    modifiedAt: '2023-02-20 13:04:24'
     mode: batch
     physicalDatasets:
       ashish_dev:
@@ -140,11 +186,13 @@ datasets:
         description: ''
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:24'
+        modifiedAt: '2023-02-20 13:04:24'
   datasets/historic_events_flat:
     name: historic_events_flat
     description: Historic events flat
     author: ashish@prophecy.io
     createdAt: '2023-02-20 13:04:24'
+    modifiedAt: '2023-02-20 13:04:24'
     mode: batch
     physicalDatasets:
       ashish_dev:
@@ -153,11 +201,13 @@ datasets:
         description: ''
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:24'
+        modifiedAt: '2023-02-20 13:04:24'
   datasets/farmers-markets:
     name: farmers-markets
     description: Farmer's Market data
     author: ashish@prophecy.io
     createdAt: '2023-02-20 13:04:24'
+    modifiedAt: '2023-02-20 13:04:24'
     mode: batch
     physicalDatasets:
       ashish_dev:
@@ -166,11 +216,13 @@ datasets:
         description: ''
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:24'
+        modifiedAt: '2023-02-20 13:04:24'
   datasets/irs-zipcode-data:
     name: irs-zipcode-data
     description: Irs zipcode data
     author: ashish@prophecy.io
     createdAt: '2023-02-20 13:04:25'
+    modifiedAt: '2023-02-20 13:04:25'
     mode: batch
     physicalDatasets:
       ashish_dev:
@@ -179,11 +231,13 @@ datasets:
         description: ''
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:25'
+        modifiedAt: '2023-02-20 13:04:25'
   datasets/farmers_market_tax_report:
     name: farmers_market_tax_report
     description: Farmer's market tax report
     author: ashish@prophecy.io
     createdAt: '2023-02-20 13:04:25'
+    modifiedAt: '2023-02-20 13:04:25'
     mode: batch
     physicalDatasets:
       ashish_dev:
@@ -192,6 +246,37 @@ datasets:
         description: ''
         author: ashish@prophecy.io
         createdAt: '2023-02-20 13:04:25'
+        modifiedAt: '2023-02-20 13:04:25'
+  datasets/emp_adls:
+    name: emp_adls
+    description: ''
+    author: juan.lamadrid@databricks.com
+    createdAt: '2023-03-24 14:42:21'
+    modifiedAt: '2023-03-24 14:42:22'
+    mode: stream
+    physicalDatasets:
+      databricks-azure:
+        fabricId: 1729
+        datasetType: File
+        description: ''
+        author: juan.lamadrid@databricks.com
+        createdAt: '2023-03-24 14:42:22'
+        modifiedAt: '2023-03-24 14:42:22'
+  datasets/emp_adls_prophecy:
+    name: emp_adls_prophecy
+    description: ''
+    author: juan.lamadrid@databricks.com
+    createdAt: '2023-03-24 14:48:41'
+    modifiedAt: '2023-03-24 14:51:37'
+    mode: stream
+    physicalDatasets:
+      databricks-azure:
+        fabricId: 1729
+        datasetType: File
+        description: ''
+        author: juan.lamadrid@databricks.com
+        createdAt: '2023-03-24 14:48:41'
+        modifiedAt: '2023-03-24 14:48:41'
 templates: {}
 jobs:
   jobs/TestJob2:
@@ -218,6 +303,7 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2023-02-21 14:01:11'
+    modifiedAt: '2023-02-21 14:01:11'
     author: ashish@prophecy.io
   jobs/TestJob:
     name: ashish-TestJob
@@ -244,8 +330,16 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2023-02-21 13:58:37'
+    modifiedAt: '2023-02-21 13:58:37'
     author: ashish@prophecy.io
-libraries: []
+functions:
+  author: null
+  createdAt: '2023-03-24 14:22:26'
+  modifiedAt: '2023-03-24 14:22:26'
+  gems: {}
+  udfs: {}
+  udafs: {}
+  expressions: {}
 subgraphs: {}
 sqlModels: {}
 sqlPipeline: null

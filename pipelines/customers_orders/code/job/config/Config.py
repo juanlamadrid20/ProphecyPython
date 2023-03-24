@@ -1,14 +1,19 @@
+from job.graph.Subgraph_1.config.Config import SubgraphConfig as Subgraph_1_Config
 from prophecy.config import ConfigBase
-prophecy_spark_context = None
 
 
 class Config(ConfigBase):
 
-    def __init__(self, ):
+    def __init__(self, Subgraph_1: dict=None, **kwargs):
         self.spark = None
-        self.update()
+        self.update(Subgraph_1)
 
-    def update(self, ):
-        global prophecy_spark_context
-        prophecy_spark_context = self.spark
+    def update(self, Subgraph_1: dict={}, **kwargs):
+        prophecy_spark = self.spark
+        self.Subgraph_1 = self.get_config_object(
+            prophecy_spark, 
+            Subgraph_1_Config(prophecy_spark = prophecy_spark), 
+            Subgraph_1, 
+            Subgraph_1_Config
+        )
         pass

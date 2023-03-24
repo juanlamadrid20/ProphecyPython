@@ -1,0 +1,212 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "1729",
+    "frontEndLanguage" : "sql",
+    "mode" : "stream",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "juan.lamadriddatabricks.com_team.helloworld.functions",
+      "sharedFunctionPackageNames" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "streaming_emp",
+    "configurationVersion" : "v1"
+  },
+  "connections" : [ {
+    "id" : "uzMbpjs_D9Aby9lb-Gph1",
+    "source" : "UtAmcxqzjR1QtcvmJ2bAa$$w8cXcPwtHl4khZWZfRyMQ",
+    "sourcePort" : "bWw19U5fLesJrmVrotw_I$$6rzA0eCn-bCVOu66Tfy36",
+    "target" : "L1KpmEBeSZol5McCyZO9r$$yaRt5537tquerYfJ1XUp5",
+    "targetPort" : "RC_WsBitX6ic8gx43gtfg$$TPp34WGTwYyy0u0M5azOJ"
+  } ],
+  "processes" : {
+    "UtAmcxqzjR1QtcvmJ2bAa$$w8cXcPwtHl4khZWZfRyMQ" : {
+      "id" : "UtAmcxqzjR1QtcvmJ2bAa$$w8cXcPwtHl4khZWZfRyMQ",
+      "component" : "StreamingSource",
+      "metadata" : {
+        "label" : "emp_adls",
+        "slug" : "emp_adls",
+        "x" : 220,
+        "y" : 380,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "bWw19U5fLesJrmVrotw_I$$6rzA0eCn-bCVOu66Tfy36",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/emp_adls"
+      }
+    },
+    "L1KpmEBeSZol5McCyZO9r$$yaRt5537tquerYfJ1XUp5" : {
+      "id" : "L1KpmEBeSZol5McCyZO9r$$yaRt5537tquerYfJ1XUp5",
+      "component" : "StreamingTarget",
+      "metadata" : {
+        "label" : "emp_adls_prophecy",
+        "slug" : "emp_adls_prophecy",
+        "x" : 600,
+        "y" : 380,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RC_WsBitX6ic8gx43gtfg$$TPp34WGTwYyy0u0M5azOJ",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "fname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lname",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "employer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ssn",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight_lb",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "height_in",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "righty",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "hire_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : true
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/emp_adls_prophecy"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}
